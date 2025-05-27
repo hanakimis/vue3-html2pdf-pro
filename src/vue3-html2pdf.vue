@@ -224,7 +224,7 @@ export default {
 
       this.$emit('beforeDownload', { html2pdf, options, pdfContent })
 
-      const html2PdfSetup = html2pdf().set(options).from(pdfContent)
+      const html2PdfSetup = (html2pdf.default || html2pdf)().set(options).from(pdfContent)
       let pdfBlobUrl = null
 
       if (this.previewModal) {
